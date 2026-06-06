@@ -118,15 +118,11 @@ function Header({ time }: { time: string }) {
               <p className="hidden text-[13px] text-gray-600 lg:block">
                 Nuovi progetti aperti per il primo trimestre 2026
               </p>
-              <div className="flex items-center gap-1.5 text-[13px] text-gray-600">
-                <Clock size={14} strokeWidth={2} />
-                <span>{time} a Londra</span>
-              </div>
               <a
                 href="#connect"
                 className="group flex items-center gap-3 rounded-full bg-gray-900 py-2 pl-5 pr-2 text-[13px] font-medium text-white"
               >
-                <TextRoll>Prenota una call strategica</TextRoll>
+                <TextRoll>Prenota una call</TextRoll>
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white text-gray-900 transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45">
                   <ArrowRight size={14} strokeWidth={2} />
                 </span>
