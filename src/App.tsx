@@ -14,7 +14,12 @@ const narrativVideoUrl =
 const luminarVideoUrl =
   "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260516_123323_f909c2b8-ff6c-4edf-882b-8ebcdbe389b5.mp4";
 
-const navLinks = ["Projects", "Studio", "Journal", "Connect"];
+const navLinks = [
+  { label: "Progetti", href: "#projects" },
+  { label: "Studio", href: "#studio" },
+  { label: "Diario", href: "#journal" },
+  { label: "Contatti", href: "#connect" },
+];
 
 function getLondonTime() {
   return new Intl.DateTimeFormat("en-GB", {
@@ -92,18 +97,18 @@ function Header({ time }: { time: string }) {
               <a
                 href="#top"
                 className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-900 text-[10px] font-bold leading-[11px] tracking-tight text-white sm:h-10 sm:w-10"
-                aria-label="Axion Studio home"
+                aria-label="Home di Axion Studio"
               >
                 AX
               </a>
               <div className="hidden items-center gap-6 md:flex">
                 {navLinks.map((link) => (
                   <a
-                    href={`#${link.toLowerCase()}`}
-                    key={link}
+                    href={link.href}
+                    key={link.label}
                     className="text-[14px] text-gray-900 transition-colors duration-300 hover:text-gray-500"
                   >
-                    {link}
+                    {link.label}
                   </a>
                 ))}
               </div>
@@ -111,17 +116,17 @@ function Header({ time }: { time: string }) {
 
             <div className="hidden items-center gap-5 md:flex">
               <p className="hidden text-[13px] text-gray-600 lg:block">
-                Taking on projects for Q1 2026
+                Nuovi progetti aperti per il primo trimestre 2026
               </p>
               <div className="flex items-center gap-1.5 text-[13px] text-gray-600">
                 <Clock size={14} strokeWidth={2} />
-                <span>{time} in London</span>
+                <span>{time} a Londra</span>
               </div>
               <a
                 href="#connect"
                 className="group flex items-center gap-3 rounded-full bg-gray-900 py-2 pl-5 pr-2 text-[13px] font-medium text-white"
               >
-                <TextRoll>Book a strategy call</TextRoll>
+                <TextRoll>Prenota una call strategica</TextRoll>
                 <span className="flex h-6 w-6 items-center justify-center rounded-full bg-white text-gray-900 transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45">
                   <ArrowRight size={14} strokeWidth={2} />
                 </span>
@@ -131,7 +136,7 @@ function Header({ time }: { time: string }) {
             <button
               type="button"
               className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-900 text-white md:hidden"
-              aria-label={isOpen ? "Close menu" : "Open menu"}
+              aria-label={isOpen ? "Chiudi menu" : "Apri menu"}
               aria-expanded={isOpen}
               onClick={() => setIsOpen((current) => !current)}
             >
@@ -150,7 +155,7 @@ function Header({ time }: { time: string }) {
         <button
           type="button"
           className="absolute inset-0 h-full w-full cursor-default"
-          aria-label="Close menu"
+          aria-label="Chiudi menu"
           onClick={() => setIsOpen(false)}
         />
         <div
@@ -160,17 +165,17 @@ function Header({ time }: { time: string }) {
         >
           <div className="mb-8 inline-flex items-center gap-2 rounded-full bg-gray-100 px-3 py-1.5 text-[13px] text-gray-700">
             <Clock size={14} />
-            <span>{time} in London</span>
+            <span>{time} a Londra</span>
           </div>
           <div className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <a
-                href={`#${link.toLowerCase()}`}
-                key={link}
+                href={link.href}
+                key={link.label}
                 className="text-[28px] font-medium leading-[32px] text-gray-900"
                 onClick={() => setIsOpen(false)}
               >
-                {link}
+                {link.label}
               </a>
             ))}
           </div>
@@ -179,7 +184,7 @@ function Header({ time }: { time: string }) {
             className="mt-8 flex items-center justify-between rounded-full bg-[#F26522] py-2 pl-5 pr-2 text-[13px] font-medium text-white"
             onClick={() => setIsOpen(false)}
           >
-            <span>Start a project</span>
+            <span>Avvia un progetto</span>
             <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-[#F26522]">
               <ArrowRight size={16} />
             </span>
@@ -231,29 +236,29 @@ function Hero() {
             Axion Studio
           </p>
           <h1 className="max-w-5xl text-[clamp(1.75rem,7vw,4.2rem)] font-medium leading-[1.08] tracking-[-0.03em] text-gray-900 sm:text-[clamp(2.5rem,5vw,4.2rem)]">
-            We craft digital experiences
+            Creiamo esperienze digitali
             <br className="hidden sm:block" />
             <span className="sm:hidden"> </span>
-            for brands ready to dominate
+            per brand pronti a guidare
             <br className="hidden sm:block" />
             <span className="sm:hidden"> </span>
-            their category online.
+            la propria categoria online.
           </h1>
           <div className="mt-8 flex flex-col gap-4 sm:mt-12 sm:flex-row sm:items-center sm:gap-5">
             <a
               href="#connect"
               className="group inline-flex w-fit items-center gap-3 rounded-full bg-[#F26522] py-2 pl-5 pr-2 text-[13px] font-medium leading-[14px] text-white transition-colors duration-300 hover:bg-[#e05a1a] sm:pl-6"
             >
-              <TextRoll>Start a project</TextRoll>
+              <TextRoll>Avvia un progetto</TextRoll>
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white text-[#F26522] transition-transform duration-500 ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:-rotate-45 sm:h-8 sm:w-8">
                 <ArrowRight size={15} strokeWidth={2} />
               </span>
             </a>
             <div className="inline-flex w-fit items-center gap-2 rounded-[4px] bg-white px-3 py-2 text-gray-900 shadow-[0_2px_8px_rgba(0,0,0,0.08)] transition-shadow duration-300 hover:shadow-[0_4px_16px_rgba(0,0,0,0.12)] sm:gap-3 sm:px-4">
               <PartnerIcon />
-              <span className="text-[13px] font-medium leading-[14px]">Certified Partner</span>
+              <span className="text-[13px] font-medium leading-[14px]">Partner certificato</span>
               <span className="rounded bg-gray-900 px-1.5 py-0.5 text-[10px] leading-[11px] text-white sm:px-2">
-                Featured
+                In evidenza
               </span>
             </div>
           </div>
@@ -298,31 +303,31 @@ function About() {
   return (
     <section id="studio" className="overflow-hidden bg-white pb-12 pt-16 sm:pb-16 sm:pt-20 lg:pb-24 lg:pt-32">
       <div className="mx-auto max-w-[1440px]">
-        <SectionBadge number="1" label="Introducing Axion" />
+        <SectionBadge number="1" label="Ti presentiamo Axion" />
         <h2 className="mb-12 px-5 text-[clamp(1.5rem,4vw,3.2rem)] font-medium leading-[1.12] tracking-[-0.02em] text-gray-900 sm:mb-16 sm:px-8 lg:mb-28 lg:px-12">
-          Strategy-led creatives, delivering
+          Creativi guidati dalla strategia,
           <br className="hidden sm:block" />
           <span className="sm:hidden"> </span>
-          results in digital and beyond.
+          risultati concreti nel digitale e oltre.
         </h2>
 
         <div className="px-5 sm:px-8 lg:hidden">
           <div className="mb-10 flex flex-col items-start gap-6">
             <p className="max-w-xl text-[15px] font-medium leading-[1.6] text-gray-900">
-              Through research, creative thinking and iteration we help growing brands realize
-              their digital full potential.
+              Attraverso ricerca, pensiero creativo e iterazione aiutiamo i brand in crescita a
+              esprimere tutto il loro potenziale digitale.
             </p>
-            <OrangeButton>About our studio</OrangeButton>
+            <OrangeButton>Scopri lo studio</OrangeButton>
           </div>
           <div className="flex flex-col gap-4 sm:flex-row sm:gap-5">
             <img
               src={smallImageUrl}
-              alt="Axion Studio creative process"
+              alt="Processo creativo di Axion Studio"
               className="aspect-[438/346] w-full rounded-xl object-cover sm:w-[45%] sm:rounded-2xl"
             />
             <img
               src={largeImageUrl}
-              alt="Axion Studio digital brand experience"
+              alt="Esperienza digitale di brand firmata Axion Studio"
               className="aspect-[900/600] w-full rounded-xl object-cover sm:w-[55%] sm:rounded-2xl"
             />
           </div>
@@ -332,28 +337,28 @@ function About() {
           <div className="self-end">
             <img
               src={smallImageUrl}
-              alt="Axion Studio creative process"
+              alt="Processo creativo di Axion Studio"
               className="aspect-[438/346] w-full rounded-2xl object-cover"
             />
           </div>
           <div className="flex self-start justify-end">
             <div className="flex flex-col items-start gap-7">
               <p className="whitespace-nowrap text-[16px] font-medium leading-[1.65] text-gray-900 xl:text-[18px]">
-                Through research, creative thinking
+                Con ricerca, pensiero creativo
                 <br />
-                and iteration we help growing
+                e iterazione aiutiamo i brand
                 <br />
-                brands realize their digital full
+                in crescita a esprimere tutto
                 <br />
-                potential.
+                il loro potenziale digitale.
               </p>
-              <OrangeButton>About our studio</OrangeButton>
+              <OrangeButton>Scopri lo studio</OrangeButton>
             </div>
           </div>
           <div className="self-end">
             <img
               src={largeImageUrl}
-              alt="Axion Studio digital brand experience"
+              alt="Esperienza digitale di brand firmata Axion Studio"
               className="aspect-[3/2] w-full rounded-2xl object-cover"
             />
           </div>
@@ -397,7 +402,7 @@ function ProjectCard({
           }`}
         >
           <span className="mr-auto whitespace-nowrap pl-4 text-[13px] font-medium opacity-0 transition-opacity delay-100 duration-200 group-hover/card:opacity-100">
-            {darkButton ? "View case study" : "Learn more"}
+            {darkButton ? "Vedi il case study" : "Scopri di più"}
           </span>
           <span className="flex h-9 w-9 shrink-0 items-center justify-center">
             {darkButton ? (
@@ -421,19 +426,19 @@ function CaseStudies() {
   return (
     <section id="projects" className="bg-[#F5F5F5] pb-16 pt-16 sm:pb-20 sm:pt-20 lg:pb-28 lg:pt-28">
       <div className="mx-auto max-w-[1440px]">
-        <SectionBadge number="2" label="Featured client work" muted />
+        <SectionBadge number="2" label="Progetti selezionati" muted />
         <h2 className="mb-10 px-5 text-[clamp(1.75rem,7vw,4.2rem)] font-medium leading-[1.08] tracking-[-0.03em] text-gray-900 sm:mb-14 sm:px-8 sm:text-[clamp(2.5rem,5vw,4.2rem)] lg:mb-16 lg:px-12">
-          Our projects
+          I nostri progetti
         </h2>
         <div className="grid grid-cols-1 gap-5 px-5 sm:gap-6 sm:px-8 md:grid-cols-2 lg:gap-7 lg:px-12">
           <ProjectCard
             title="Narrativ"
-            description="Winner of Site of the Month 2025 - an interactive 3D showcase driving record engagement"
+            description="Vincitore del Sito del Mese 2025: uno showcase 3D interattivo che ha portato l’engagement a livelli record"
             videoUrl={narrativVideoUrl}
           />
           <ProjectCard
             title="Luminar"
-            description="Transforming a dated platform into a conversion-focused brand experience"
+            description="Da piattaforma datata a esperienza di brand pensata per aumentare le conversioni"
             videoUrl={luminarVideoUrl}
             square
             darkButton
