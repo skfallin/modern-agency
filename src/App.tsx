@@ -168,7 +168,7 @@ function Header({ time }: { time: string }) {
               <a
                 href={link.href}
                 key={link.label}
-                className="text-[28px] font-medium leading-[32px] text-gray-900"
+                className="font-['Instrument_Serif'] text-[28px] font-medium leading-[32px] text-gray-900"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
@@ -231,7 +231,7 @@ function Hero() {
           <p className="mb-5 text-[13px] leading-[14px] tracking-wide text-gray-900 sm:mb-8">
             Axion Studio
           </p>
-          <h1 className="max-w-5xl text-[clamp(1.75rem,7vw,4.2rem)] font-medium leading-[1.08] tracking-[-0.03em] text-gray-900 sm:text-[clamp(2.5rem,5vw,4.2rem)]">
+          <h1 className="max-w-5xl font-['Instrument_Serif'] text-[clamp(1.75rem,7vw,4.2rem)] font-medium leading-[1.08] tracking-[-0.03em] text-gray-900 sm:text-[clamp(2.5rem,5vw,4.2rem)]">
             Creiamo esperienze digitali
             <br className="hidden sm:block" />
             <span className="sm:hidden"> </span>
@@ -300,7 +300,7 @@ function About() {
     <section id="studio" className="overflow-hidden bg-white pb-12 pt-16 sm:pb-16 sm:pt-20 lg:pb-24 lg:pt-32">
       <div className="mx-auto max-w-[1440px]">
         <SectionBadge number="1" label="Ti presentiamo Axion" />
-        <h2 className="mb-12 px-5 text-[clamp(1.5rem,4vw,3.2rem)] font-medium leading-[1.12] tracking-[-0.02em] text-gray-900 sm:mb-16 sm:px-8 lg:mb-28 lg:px-12">
+        <h2 className="mb-12 px-5 font-['Instrument_Serif'] text-[clamp(1.5rem,4vw,3.2rem)] font-medium leading-[1.12] tracking-[-0.02em] text-gray-900 sm:mb-16 sm:px-8 lg:mb-28 lg:px-12">
           Creativi guidati dalla strategia,
           <br className="hidden sm:block" />
           <span className="sm:hidden"> </span>
@@ -413,7 +413,7 @@ function ProjectCard({
         </div>
       </div>
       <p className="mt-4 text-[13px] leading-relaxed text-gray-600">{description}</p>
-      <h3 className="mt-1 text-[14px] font-semibold leading-[15px] text-gray-900">{title}</h3>
+      <h3 className="mt-1 font-['Instrument_Serif'] text-[14px] font-semibold leading-[15px] text-gray-900">{title}</h3>
     </article>
   );
 }
@@ -423,7 +423,7 @@ function CaseStudies() {
     <section id="projects" className="bg-[#F5F5F5] pb-16 pt-16 sm:pb-20 sm:pt-20 lg:pb-28 lg:pt-28">
       <div className="mx-auto max-w-[1440px]">
         <SectionBadge number="2" label="Progetti selezionati" muted />
-        <h2 className="mb-10 px-5 text-[clamp(1.75rem,7vw,4.2rem)] font-medium leading-[1.08] tracking-[-0.03em] text-gray-900 sm:mb-14 sm:px-8 sm:text-[clamp(2.5rem,5vw,4.2rem)] lg:mb-16 lg:px-12">
+        <h2 className="mb-10 px-5 font-['Instrument_Serif'] text-[clamp(1.75rem,7vw,4.2rem)] font-medium leading-[1.08] tracking-[-0.03em] text-gray-900 sm:mb-14 sm:px-8 sm:text-[clamp(2.5rem,5vw,4.2rem)] lg:mb-16 lg:px-12">
           I nostri progetti
         </h2>
         <div className="grid grid-cols-1 gap-5 px-5 sm:gap-6 sm:px-8 md:grid-cols-2 lg:gap-7 lg:px-12">
